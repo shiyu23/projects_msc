@@ -1,0 +1,14 @@
+pro: pro.o ImpliedVol.o  Date.o
+	g++  -o pro.out pro.o ImpliedVol.o Date.o
+
+pro.o: pro.cpp ImpliedVol.h BSAnalytics.h Date.h
+	g++ -c pro.cpp
+ImpliedVol.o: ImpliedVol.cpp ImpliedVol.h
+	g++ -c ImpliedVol.cpp 
+Date.o: Date.cpp Date.h
+	g++ -c Date.cpp
+
+	
+
+clean:
+	rm *.o *.out
